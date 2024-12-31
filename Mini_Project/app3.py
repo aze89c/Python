@@ -1,5 +1,6 @@
 #********************************************** FRONT-END**********************************************#
 
+
 import streamlit as st
 
 # import the necessary packages for image recognition
