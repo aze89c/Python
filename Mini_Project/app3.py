@@ -23,7 +23,7 @@ import urllib
 # set page layout
 st.set_page_config(
     page_title="Image Analysis",
-    page_icon="✨",
+    page_icon="✨",#or any other emoji
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -43,18 +43,18 @@ network = st.sidebar.selectbox("Select the Model", models_list)
 # define a dictionary that maps model names to their classes
 # inside Keras
 MODELS = {
-    "VGG16": VGG16,
+    "VGG16": VGG16, #training models 
     "VGG19": VGG19,
     "Inception": InceptionV3,
     "Xception": Xception,  # TensorFlow ONLY
     "ResNet": ResNet50,
 }
 
-# component to upload images
+# component and format to upload images
 uploaded_file = st.sidebar.file_uploader(
     "Choose an image to classify", type=["jpg", "jpeg", "png"]
 )
-# component for toggling code
+# component for toggling code/alternative availability/ not required
 #show_code = st.sidebar.checkbox("Show Code")
 
 if uploaded_file:
@@ -62,7 +62,7 @@ if uploaded_file:
 
     # initialize the input image shape (224x224 pixels) along with
     # the pre-processing function (this might need to be changed
-    # based on which model we use to classify our image)
+    # based on which model we use to classify our image to analyse
     inputShape = (224, 224)
     preprocess = imagenet_utils.preprocess_input
     # if we are using the InceptionV3 or Xception networks, then we
